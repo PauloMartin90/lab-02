@@ -4,9 +4,6 @@
 /// Globa variable
 const keywordArr= [];
 
-
-
-
 // Image Constructor
 function ImgStorage(image_url, title, description, keyword, horns) {
     this.image_url = image_url;
@@ -44,11 +41,9 @@ function ImgStorage(image_url, title, description, keyword, horns) {
             if (!keywordArr.includes(animalPic.keyword)){
             renderAnimalOptions(animalPic.keyword, keywordArr);
             }
-
     });
     ImgStorage.allimageStorage.forEach(imgStorage => imgStorage.renderImages());
   }
-
 
 
 /// Renders Dropdown Menu
@@ -56,8 +51,6 @@ function renderAnimalOptions(dropdownOptions, refArr){
     $('select').append('<option>' + dropdownOptions + '</option>');
     refArr.push(dropdownOptions);
   }
-
-
 
 
 // ///////////////////////////
