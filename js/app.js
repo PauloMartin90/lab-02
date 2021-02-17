@@ -1,4 +1,3 @@
-
 'use strict'
 
 /// Globa variable
@@ -24,11 +23,9 @@ function ImgStorage(image_url, title, description, keyword, horns) {
     let h2Element = $("<h2></h2>").text(this.title); //
     let imgElement = $("<img>").attr('src', this.image_url);
     let pElement = $("<p></p>").text(this.description);
-
     
     $(divElement).append(h2Element, imgElement, pElement)
     $("#horned-animals").append(divElement)
-
 }
 
 // This Function utilizes AJAX to pull images from the server
@@ -38,8 +35,8 @@ function ImgStorage(image_url, title, description, keyword, horns) {
         
     new ImgStorage(animalPic.image_url, animalPic.title, animalPic.description, animalPic.keyword, animalPic.horns);
     
-            if (!keywordArr.includes(animalPic.keyword)){
-            renderAnimalOptions(animalPic.keyword, keywordArr);
+            if ($(`select:contains(${animalPic.keyword})`).length === 0){
+            renderAnimalOptions(animalPic.keyword);
             }
     });
     ImgStorage.allimageStorage.forEach(imgStorage => imgStorage.renderImages());
@@ -47,9 +44,8 @@ function ImgStorage(image_url, title, description, keyword, horns) {
 
 
 /// Renders Dropdown Menu
-function renderAnimalOptions(dropdownOptions, refArr){
+function renderAnimalOptions(dropdownOptions){
     $('select').append('<option>' + dropdownOptions + '</option>');
-    refArr.push(dropdownOptions);
   }
 
 
@@ -59,11 +55,8 @@ function renderAnimalOptions(dropdownOptions, refArr){
 // This Intiates Data File to be read and stored locally
 $.ajax('data/page-1.json').then(objectFile); 
 
-
-
 /// Function to click and filter
 $('select').on('change', filterSelection);
-
 
 function filterSelection(event) {
   $('#horned-animals').empty();
@@ -75,28 +68,5 @@ function filterSelection(event) {
             animalpic.renderImages()    
         }
   });
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
