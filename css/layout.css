@@ -1,10 +1,29 @@
+h1 {
+    padding: 30px;
+}
+
+select {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
 div {
-    height: 300px;
+    height: 350px;
     width: 300px;
     float: left;
+    margin-bottom: 70px;
 }
 
 img {
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
+    margin-left: 50px;
 }
+
+p {
+    width: 250px;
+    margin-left: 30px;
+}
+
+

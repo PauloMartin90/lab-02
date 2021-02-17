@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+h1 {
+  background-color: pink;
+}
+
+h1, h2  {
+  font-family: "Architects Daughter";
+  text-align: center;
+}
+
+select {
+  font-size: larger;
+}
+
+
+img {
+  border-radius: 12px;
+  border: 3px solid #6A7073;
+  box-shadow: -5px -5px 10px #6b6d75;
+}
+
+p {
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
